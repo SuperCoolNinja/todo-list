@@ -1,0 +1,50 @@
+.child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formStyle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputStyle {
+  margin: 1rem 3rem;
+  width: 25rem;
+  padding: 1rem;
+  outline: #92cf8a70;
+  border: #92cf8a70 2.5px solid;
+  border-radius: 0.5rem;
+  color: black;
+  transition: 0.3s ease-in-out;
+}
+.inputStyle[type="text"] {
+  font-size: 1rem;
+}
+.inputStyle:focus {
+  background: rgba(54, 54, 54, 0.093);
+  outline: #92cf8a;
+  border: #92cf8a 2.5px solid;
+}
+
+.add {
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+.add:focus {
+  outline: none;
+}
+
+.bg-btn {
+  width: auto;
+  height: auto;
+  background-color: #377fd177;
+  padding: 1rem 1.7rem;
+  border-radius: 0.5rem;
+}
+
+.bg-btn:hover {
+  transition: 0.3s ease-in-out;
+  background-color: #377fd1;
+}
