@@ -1,8 +1,5 @@
 import "./task.css";
 
-import { useState } from "react";
-import { list } from "postcss";
-
 export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
   const handleSubmit = (e, i) => {
     e.preventDefault();
@@ -18,7 +15,6 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
   const handleCheckbox = (e, i) => {
     handleTaskCompleted(listTask, i, e.target.checked);
     e.target.checked = !e.target.checked;
-    console.log(listTask);
   };
 
   return (
@@ -38,7 +34,11 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
                   checked={v.isChecked ? true : false}
                   onChange={(e) => handleCheckbox(e, i)}
                 />
-                <li className={`bg-task ${v.isChecked ? "completed" : "notCompleted"}`}>
+                <li
+                  className={`bg-task ${
+                    v.isChecked ? "completed" : "notCompleted"
+                  }`}
+                >
                   <p
                     className={`task-content text-black text-sm ${
                       v.isChecked ? "line-through" : ""
