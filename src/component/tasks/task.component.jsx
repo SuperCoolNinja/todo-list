@@ -3,18 +3,55 @@ import "./task.css";
 export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
   const handleSubmit = (e, i) => {
     e.preventDefault();
-
-    const dropElement = e.target.elements["drop"];
-
-    //delete task :
-    if (dropElement) {
-      handleRemoveTask(listTask, i);
-    }
   };
 
-  const handleCheckbox = (e, i) => {
-    handleTaskCompleted(listTask, i, e.target.checked);
-    e.target.checked = !e.target.checked;
+  const handleOnDelete = (e, i) => {
+    e.preventDefault();
+    handleRemoveTask(listTask, i);
+  };
+
+  const handleOnCompleted = (e, i) => {
+    e.preventDefault();
+    handleTaskCompleted(listTask, i, true);
+  };
+
+  const ShowAllButton = ({ isChecked, i }) => {
+    if (!isChecked) {
+      return (
+        <>
+          <button
+            type="submit"
+            className="completed-task"
+            name="completed"
+            onClick={(e) => handleOnCompleted(e, i)}
+          >
+            ✔
+          </button>
+
+          <button
+            type="submit"
+            className="drop-task"
+            name="drop"
+            onClick={(e) => handleOnDelete(e, i)}
+          >
+            ✖
+          </button>
+        </>
+      );
+    }
+
+    return (
+      <>
+        <button
+          type="submit"
+          className="drop-task"
+          name="drop"
+          onClick={(e) => handleOnDelete(e, i)}
+        >
+          ✖
+        </button>
+      </>
+    );
   };
 
   return (
@@ -28,12 +65,6 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
                 className="list flex items-center gap-5 pb-5"
                 onSubmit={(e) => handleSubmit(e, i)}
               >
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  checked={v.isChecked ? true : false}
-                  onChange={(e) => handleCheckbox(e, i)}
-                />
                 <li
                   className={`bg-task ${
                     v.isChecked ? "completed" : "notCompleted"
@@ -47,9 +78,8 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
                     {v.content}
                   </p>
                 </li>
-                <button type="submit" className="drop-task" name="drop">
-                  🗑
-                </button>
+
+                <ShowAllButton isChecked={v.isChecked} i={i} />
               </form>
             </div>
           );
