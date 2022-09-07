@@ -1,7 +1,5 @@
 .child {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .formStyle {
   display: flex;
