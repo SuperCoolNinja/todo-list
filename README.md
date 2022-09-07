@@ -6,6 +6,11 @@ A React JS Mini-Todo-list project made from scratch using some tailwind for ez s
 ## Description
 A simple Mini-Todo-List which i made from scratch while learning React Js logic.
 
+## Start the project
+So this project use React JS you will need to have node js to be able to install the module.
+
+commande : npm i / npm start
+
 
 ## Features
 <ul> 
