@@ -5,6 +5,7 @@
   align-items: flex-start;
   max-height: 30rem;
   overflow: auto;
+  width: 100%;
 }
 
 /*Custom with bar color and looks :*/
@@ -39,7 +40,7 @@
   background-color: #92cf8a;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  margin-left: 4rem;
+  margin-left: 3.8rem;
 }
 
 /*Task style on completed :*/
@@ -53,6 +54,7 @@
   background-color: #92cf8a;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  margin-left: -0.4rem;
 }
 
 /*Only add some margin top to the first task send*/
@@ -74,6 +76,7 @@
   border-radius: 2rem;
   color: #f5f5f5c8;
   transition: 0.3s ease-in-out;
+  margin-right: 1rem;
 }
 .drop-task:hover {
   color: rgb(245, 245, 245);
