@@ -10,7 +10,7 @@ export const Form = ({ handleAddTask }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleAddTask(taskContent);
-    setTaskContent((taskContent) => ({ content: ""}));
+    setTaskContent({content: ""});
   };
 
   const handleChange = (e) => {
@@ -19,8 +19,8 @@ export const Form = ({ handleAddTask }) => {
   };
 
   return (
-    <div className="child">
-      <form onSubmit={handleSubmit} className="formStyle">
+    <div>
+      <form onSubmit={handleSubmit} className="wrapper-form">
         <input
           className="inputStyle"
           type="text"

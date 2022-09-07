@@ -1,10 +1,10 @@
 .container-task {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   max-height: 30rem;
   overflow: auto;
-  padding: 0 1rem;
 }
 
 /*Custom with bar color and looks :*/
@@ -39,11 +39,11 @@
   background-color: #92cf8a;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  margin-left: 4rem;
 }
 
 /*Task style on completed :*/
 .completed {
-  overflow: hidden;
   -webkit-box-shadow: inset 0px 0px 50px -30px rgba(0, 0, 0, 1);
   -moz-box-shadow: inset 0px 0px 50x -30px rgba(0, 0, 0, 1);
   box-shadow: inset 0px 0px 50px -30px rgba(0, 0, 0, 1);
@@ -112,13 +112,11 @@
 /*Animation on task completed :*/
 @keyframes pop-out {
   0% {
-    opacity: 0.3;
     width: 25rem;
   }
 
   100% {
-    opacity: 1;
-    width: 20rem;
-    background-color: #072a02a2;
+    opacity: 0.5;
+    width: 25rem;
   }
 }

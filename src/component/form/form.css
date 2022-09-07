@@ -1,7 +1,4 @@
-.child {
-  display: flex;
-}
-.formStyle {
+.wrapper-form {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +38,6 @@
   padding: 1rem 1.7rem;
   border-radius: 0.5rem;
 }
-
 .bg-btn:hover {
   transition: 0.3s ease-in-out;
   background-color: #377fd1;

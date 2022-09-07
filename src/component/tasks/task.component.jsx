@@ -55,18 +55,18 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
   };
 
   return (
-    <div>
+    <>
       <h1>Task list :</h1>
       <ul className="container-task">
         {listTask.map((v, i) => {
           return (
-            <div key={i}>
+            <div key={i} className="mx-auto">
               <form
                 className="list flex items-center gap-5 pb-5"
                 onSubmit={(e) => handleSubmit(e, i)}
               >
                 <li
-                  className={`bg-task ${
+                  className={`bg-task mx-auto ${
                     v.isChecked ? "completed" : "notCompleted"
                   }`}
                 >
@@ -85,6 +85,6 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
           );
         })}
       </ul>
-    </div>
+    </>
   );
 };
