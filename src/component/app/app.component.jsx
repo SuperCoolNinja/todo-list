@@ -13,11 +13,10 @@ export const App = () => {
     setReverseTask(copyTask);
   }, [taskList]);
 
-
-  
   //Update the tasklist :
   const handleAddTask = (task) => {
-    setTaskList([...taskList, task]);
+    if (task.content.length > 0 && task.content !== "")
+      setTaskList([...taskList, task]);
   };
 
   const handleRemoveTask = (task, index) => {
