@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
 import { Form } from "../form/form.component";
 import { Task } from "../tasks/task.component";
+import { Notifications, Color } from "../notify/notify";
 import "./app.css";
 
 export const App = () => {
   const [taskList, setTaskList] = useState([]);
   const [reverseTask, setReverseTask] = useState([]);
+  const [notifications, setNotifications] = useState([]);
+
+  const createNotification = (color, content) =>
+    setNotifications([
+      ...notifications,
+      { color, id: notifications.length, content },
+    ]);
 
   useEffect(() => {
     const copyTask = [...taskList];
@@ -23,13 +31,20 @@ export const App = () => {
     let copyTask = [...task];
     copyTask = copyTask.filter((_, i) => i !== index);
     setTaskList(copyTask);
+    createNotification(Color.error, "Task deleted 👌");
   };
 
   const handleTaskCompleted = (task, i, bool) => {
     let copyTask = [...task];
     copyTask[i].isChecked = bool;
     setTaskList(copyTask);
+    createNotification(Color.success, "Task completed 👍");
   };
+
+  const deleteNotification = (id) =>
+    setNotifications(
+      notifications.filter((notification) => notification.id !== id)
+    );
 
   return (
     <div>
@@ -42,6 +57,17 @@ export const App = () => {
           handleRemoveTask={handleRemoveTask}
         />
       </div>
+
+      {notifications.map(({ id, color, content }) => (
+        <Notifications
+          key={id}
+          onDelete={() => deleteNotification(id)}
+          autoClose={true}
+          color={color}
+        >
+          {content}
+        </Notifications>
+      ))}
     </div>
   );
 };

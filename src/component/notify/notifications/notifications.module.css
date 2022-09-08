@@ -1,0 +1,46 @@
+.notification {
+  max-width: 430px;
+  max-height: 200px;
+  overflow: hidden;
+  padding: 1.2rem;
+  font-weight: bold;
+  position: relative;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+  box-shadow: inset 0px 0px 15px 8px rgba(0, 0, 0, 0.1);
+  animation-name: popUp;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.notification.info {
+  background-color: #2195f3d8;
+}
+
+.notification.success {
+  background-color: #4caf4fe9;
+}
+
+.notification.warning {
+  background-color: #ff9900cd;
+}
+
+.notification.error {
+  background-color: #f44336d6;
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.0);
+    opacity: 1;
+  }
+}

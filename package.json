@@ -1,8 +1,11 @@
 {
   "name": "mini-project-todo",
-  "version": "0.1.0",
+  "author": "SuperCoolNinja",
+  "version": "1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.3.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
