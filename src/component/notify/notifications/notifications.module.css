@@ -1,3 +1,17 @@
+.container {
+  overflow: hidden;
+  max-height: 200px;
+  transition: max-height 0.3s ease-out;
+}
+
+.container:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.container.shrink {
+  max-height: 0;
+}
+
 .notification {
   max-width: 430px;
   max-height: 200px;
@@ -8,13 +22,22 @@
   font-size: 1.3rem;
   border-radius: 0.5rem;
   box-shadow: inset 0px 0px 15px 8px rgba(0, 0, 0, 0.1);
+}
+
+.in {
   animation-name: popUp;
   animation-duration: 0.6s;
   animation-fill-mode: forwards;
 }
 
+.out {
+  animation-name: popOut;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
 .notification:not(:last-child) {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .notification.info {
@@ -40,7 +63,19 @@
   }
 
   100% {
-    transform: scale(1.0);
+    transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
   }
 }

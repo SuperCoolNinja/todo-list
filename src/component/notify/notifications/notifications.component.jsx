@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import PropTypes from "prop-types";
 import styles from "./notifications.module.css";
 import cn from "classnames";
 
-let timeToDelete = 100 * 30;
+let timeToClose = 700;
 
 export const Color = {
   info: "info",
@@ -15,21 +15,35 @@ export const Color = {
 
 export const Notifications = ({
   color = Color.info,
-  autoClose = true,
+  autoClose = false,
   onDelete,
   children,
 }) => {
+  const [isClosing, setIsClosing] = useState(false);
+
   useEffect(() => {
     if (autoClose) {
-      const timeoutId = setTimeout(onDelete, timeToDelete);
+      const timeoutId = setTimeout(() => setIsClosing(true), timeToClose);
+
       return () => {
         clearTimeout(timeoutId);
       };
     }
-  }, [onDelete, autoClose]);
+  }, [autoClose]);
 
   return createPortal(
-    <div className={cn([styles.notification, styles[color]])}>{children}</div>,
+    <div className={cn([styles.container, { [styles.shrink]: isClosing }])}>
+      <div
+        className={cn([
+          styles.notification,
+          styles[color],
+          { [styles.in]: !isClosing },
+          { [styles.out]: isClosing },
+        ])}
+      >
+        {children}
+      </div>
+    </div>,
     document.getElementById("notifyContainer")
   );
 };

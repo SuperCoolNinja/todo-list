@@ -14,13 +14,16 @@
 
 #notifyContainer {
   position: absolute;
-  top: 18rem;
+  top: 20rem;
   right: 15rem;
+  height: 31rem;
+  max-height: 31rem;
+  overflow: hidden;
 }
 
 body {
+  position: relative;
   font-family: "Poppins", sans-serif;
-  height: 100vh;
   background: #066acd;
   font-size: 62.5%;
   color: white;
