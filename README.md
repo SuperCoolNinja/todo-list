@@ -25,6 +25,8 @@ commande : npm i / npm start
 So to end this project i need to make it responsive, save your task into the memory cache, and of course add the edit feature.
 
 
+# Try it now : 
+https://mini-todolist.netlify.app/
 
 
 https://user-images.githubusercontent.com/28671231/188920154-047c2a2a-f5d5-4341-8975-24bcb41d9d3f.mp4
