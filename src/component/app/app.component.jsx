@@ -4,9 +4,14 @@ import { Task } from "../tasks/task.component";
 import { Notifications, Color } from "../notify/notify";
 import "./app.css";
 
+const getTaskSaved = () => {
+  const list = localStorage.getItem("data");
+  if (list) return JSON.parse(localStorage.getItem("data"));
+  return [];
+};
+
 export const App = () => {
-  const [taskList, setTaskList] = useState([]);
-  const [reverseTask, setReverseTask] = useState([]);
+  const [data, setData] = useState(getTaskSaved());
   const [notifications, setNotifications] = useState([]);
 
   const createNotification = (color, content) =>
@@ -16,35 +21,30 @@ export const App = () => {
     ]);
 
   useEffect(() => {
-    const copyTask = [...taskList];
-    copyTask.sort((a, b) => Number(a.isChecked) - Number(b.isChecked));
-    setReverseTask(copyTask);
-  }, [taskList]);
+    localStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
 
   //Update the tasklist :
   const handleAddTask = (task) => {
-    if (task.content.length > 0 && task.content !== "")
-      setTaskList([...taskList, task]);
+    if (task.content.length > 0 && task.content !== "") {
+      setData([...data, task]);
+    }
   };
 
   const handleRemoveTask = (task, index) => {
     let copyTask = [...task];
     copyTask = copyTask.filter((_, i) => i !== index);
-    setTaskList(copyTask);
+    setData(copyTask);
     createNotification(Color.error, "Task deleted 👌");
   };
 
   const handleTaskCompleted = (task, i, bool) => {
     let copyTask = [...task];
     copyTask[i].isChecked = bool;
-    setTaskList(copyTask);
+    copyTask.sort((a, b) => Number(a.isChecked) - Number(b.isChecked));
+    setData(copyTask);
     createNotification(Color.success, "Task completed 👍");
   };
-
-  const deleteNotification = (id) =>
-    setNotifications(
-      notifications.filter((notification) => notification.id !== id)
-    );
 
   return (
     <div>
@@ -53,18 +53,13 @@ export const App = () => {
         <Form handleAddTask={handleAddTask} />
         <Task
           handleTaskCompleted={handleTaskCompleted}
-          listTask={reverseTask}
+          listTask={data}
           handleRemoveTask={handleRemoveTask}
         />
       </div>
 
       {notifications.map(({ id, color, content }) => (
-        <Notifications
-          key={id}
-          onDelete={() => deleteNotification(id)}
-          autoClose={true}
-          color={color}
-        >
+        <Notifications key={id} autoClose={true} color={color}>
           {content}
         </Notifications>
       ))}

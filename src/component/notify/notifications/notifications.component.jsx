@@ -16,7 +16,6 @@ export const Color = {
 export const Notifications = ({
   color = Color.info,
   autoClose = false,
-  onDelete,
   children,
 }) => {
   const [isClosing, setIsClosing] = useState(false);
