@@ -9,6 +9,7 @@
 *::after {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 #notifyContainer {
@@ -21,6 +22,7 @@
 }
 
 body {
+  position: relative;
   font-family: "Poppins", sans-serif;
   background: #066acd;
   font-size: 62.5%;

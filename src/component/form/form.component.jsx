@@ -2,7 +2,7 @@ import "./form.css";
 import { useState } from "react";
 import { Task } from "../tasks/task.component";
 
-export const Form = ({ handleAddTask, handleTaskCompleted, handleRemoveTask, data }) => {
+export const Formulaire = ({ handleAddTask, handleTaskCompleted, handleRemoveTask, data }) => {
   const [taskContent, setTaskContent] = useState({
     content: "",
     isChecked: false,

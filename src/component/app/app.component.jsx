@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { Form } from "../form/form.component";
+import { Formulaire } from "../form/form.component";
 import {
   Color,
   Notifications,
 } from "../notify/notifications/notifications.component";
-import "./app.css";
 
 const getTaskSaved = () => {
   const list = localStorage.getItem("data");
@@ -52,7 +51,7 @@ export const App = () => {
     <div>
       <h1 className="text-center font-semibold text-5xl py-28">Todo📝</h1>
 
-      <Form handleAddTask={handleAddTask} handleTaskCompleted = {handleTaskCompleted} handleRemoveTask={handleRemoveTask} data={data} />
+      <Formulaire handleAddTask={handleAddTask} handleTaskCompleted = {handleTaskCompleted} handleRemoveTask={handleRemoveTask} data={data} />
 
       {notifications.map(({ id, color, content }) => (
         <Notifications key={id} autoClose={true} color={color}>
