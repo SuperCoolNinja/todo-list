@@ -4,7 +4,7 @@ import {
   Color,
   Notifications,
 } from "../notify/notifications/notifications.component";
-import "./app.css";
+import styles from "./app.module.css";
 
 const getTaskSaved = () => {
   const list = localStorage.getItem("data");
@@ -50,7 +50,7 @@ export const App = () => {
 
   return (
     <div>
-      <h1 className="title">Todo📝</h1>
+      <h1 className={styles.title}>Todo📝</h1>
 
       <Form
         handleAddTask={handleAddTask}

@@ -1,4 +1,4 @@
-import "./task.css";
+import styles from "./task.module.css";
 
 export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
   const handleSubmit = (e) => {
@@ -21,7 +21,7 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
         <>
           <button
             type="submit"
-            className="completed-task"
+            className={`${styles.completed}`}
             name="completed"
             onClick={(e) => handleOnCompleted(e, i)}
           >
@@ -30,7 +30,7 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
 
           <button
             type="submit"
-            className="drop-task"
+            className={`${styles.drop}`}
             name="drop"
             onClick={(e) => handleOnDelete(e, i)}
           >
@@ -44,7 +44,7 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
       <>
         <button
           type="submit"
-          className="drop-task"
+          className={`${styles.drop}`}
           name="drop"
           onClick={(e) => handleOnDelete(e, i)}
         >
@@ -56,12 +56,12 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
 
   return (
     <>
-      <ul className="container-task">
+      <ul className={`${styles.container}`}>
         {listTask.map((v, i) => {
           return (
             <div key={i} style={{ margin: "auto" }}>
               <form
-                className="list"
+                className={`${styles.list}`}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -72,8 +72,8 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
               >
                 <li
                   style={{ margin: "auto" }}
-                  className={`bg-task ${
-                    v.isChecked ? "completed" : "notCompleted"
+                  className={` ${styles.bg} ${
+                    v.isChecked ? `${styles.completed}` : `${styles.notCompleted}`
                   }`}
                 >
                   <p
@@ -82,7 +82,7 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
                       color: "black",
                       textDecorationLine: v.isChecked ? "line-through" : "",
                     }}
-                    className="task-content"
+                    className={`${styles.taskContent}`}
                   >
                     {v.content}
                   </p>
