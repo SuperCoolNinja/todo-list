@@ -9,8 +9,11 @@ export const Form = ({ handleAddTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  };
+
+  const handleAdd = () => {
     handleAddTask(taskContent);
-    setTaskContent({content: ""});
+    setTaskContent({ content: "" });
   };
 
   const handleChange = (e) => {
@@ -29,7 +32,12 @@ export const Form = ({ handleAddTask }) => {
           onChange={handleChange}
         />
         <div className="bg-btn">
-          <button type="submit" name="add" className="add font-semibold" onClick={handleSubmit}>
+          <button
+            type="submit"
+            name="add"
+            className="add font-semibold"
+            onClick={handleAdd}
+          >
             ADD
           </button>
         </div>
