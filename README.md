@@ -30,4 +30,5 @@ So to end this project i need to make it responsive, and of course add the edit 
 
 https://mini-todolist.netlify.app/
 
-https://user-images.githubusercontent.com/28671231/189210787-14a73156-5c18-459b-aa92-ddbbe98ab1df.mp4
+
+![Visual](https://cdn.discordapp.com/attachments/554479498721099787/1017722535778979912/unknown.png)
