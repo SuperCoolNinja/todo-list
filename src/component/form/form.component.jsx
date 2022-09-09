@@ -22,26 +22,22 @@ export const Form = ({ handleAddTask }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="wrapper-form">
-        <input
-          className="inputStyle"
-          type="text"
-          placeholder="Task to be done ✍"
-          value={taskContent.content}
-          onChange={handleChange}
-        />
-        <div className="bg-btn">
-          <button
-            type="submit"
-            name="add"
-            className="add font-semibold"
-            onClick={handleAdd}
-          >
-            ADD
-          </button>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="wrapper-form">
+      <input
+        className="inputStyle"
+        type="text"
+        placeholder="Task to be done ✍"
+        value={taskContent.content}
+        onChange={handleChange}
+      />
+      <button
+        type="submit"
+        name="add"
+        className="bg-btn add font-semibold"
+        onClick={handleAdd}
+      >
+        ADD
+      </button>
+    </form>
   );
 };
