@@ -1,13 +1,8 @@
-import styles from "./form.module.css";
+import "./form.css";
 import { useState } from "react";
 import { Task } from "../tasks/task.component";
 
-export const Form = ({
-  handleAddTask,
-  handleTaskCompleted,
-  handleRemoveTask,
-  data,
-}) => {
+export const Form = ({ handleAddTask, handleTaskCompleted, handleRemoveTask, data }) => {
   const [taskContent, setTaskContent] = useState({
     content: "",
     isChecked: false,
@@ -28,10 +23,10 @@ export const Form = ({
   };
 
   return (
-    <div className={`${styles.container}`}>
+    <div className="container">
       <form onSubmit={handleSubmit}>
         <input
-          className={`${styles.inputStyle}`}
+          className="inputStyle"
           type="text"
           placeholder="Task to be done ✍"
           value={taskContent.content}
@@ -40,7 +35,7 @@ export const Form = ({
         <button
           type="submit"
           name="add"
-          className={`${styles.bgBtn} ${styles.add}`}
+          className="bg-btn add font-semibold"
           onClick={handleAdd}
         >
           ADD

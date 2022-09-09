@@ -41,55 +41,19 @@
   outline: none;
 }
 
-.bgBtn {
+.bg-btn {
   width: auto;
   height: auto;
   background-color: #0077ff;
   padding: 1rem 1.7rem;
   border-radius: 0.5rem;
 }
-.bgBtn:hover {
+.bg-btn:hover {
   transition: 0.3s ease-in-out;
   background-color: #33b9f3;
 }
 
-@media (max-width: 576px) {
-  body {
-    background: rgb(149, 104, 71);
-  }
-  .container {
-    width: 90%;
-  }
-
-  .inputStyle {
-    margin: 1rem 1rem;
-    width: 13rem;
-  }
-
-  .bgBtn {
-    padding: 0.7rem 0.8rem;
-  }
-}
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-  body {
-    background: rgb(149, 104, 71) !;
-  }
-  .container {
-    width: 90%;
-  }
-
-  .inputStyle {
-    margin: 1rem 1rem;
-    width: 13rem;
-  }
-
-  .bgBtn{
-    padding: 0.7rem 0.8rem;
-  }
-}
-
-/* @media (max-width: 640px) {
+@media (max-width: 640px) {
   .container {
     width: 80%;
   }
@@ -99,7 +63,22 @@
     width: 13rem;
   }
 
-  .bgBtn {
+  .bg-btn {
     padding: 0.7rem 0.8rem;
   }
-} */
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 90%;
+  }
+
+  .inputStyle {
+    margin: 1rem 1rem;
+    width: 13rem;
+  }
+
+  .bg-btn {
+    padding: 0.7rem 0.8rem;
+  }
+}

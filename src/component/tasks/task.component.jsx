@@ -1,4 +1,4 @@
-import styles from "./task.module.css";
+import "./task.css";
 
 export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
   const handleSubmit = (e) => {
@@ -21,7 +21,7 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
         <>
           <button
             type="submit"
-            className={`${styles.completed}`}
+            className="completed-task"
             name="completed"
             onClick={(e) => handleOnCompleted(e, i)}
           >
@@ -30,7 +30,7 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
 
           <button
             type="submit"
-            className={`${styles.drop}`}
+            className="drop-task"
             name="drop"
             onClick={(e) => handleOnDelete(e, i)}
           >
@@ -44,7 +44,7 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
       <>
         <button
           type="submit"
-          className={`${styles.drop}`}
+          className="drop-task"
           name="drop"
           onClick={(e) => handleOnDelete(e, i)}
         >
@@ -56,33 +56,23 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
 
   return (
     <>
-      <ul className={`${styles.container}`}>
+      <ul className="container-task">
         {listTask.map((v, i) => {
           return (
-            <div key={i} style={{ margin: "auto" }}>
+            <div key={i} className="mx-auto">
               <form
-                className={`${styles.list}`}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  paddingBottom: 5,
-                  gap: "2em",
-                }}
+                className="list flex items-center gap-5 pb-5"
                 onSubmit={handleSubmit}
               >
                 <li
-                  style={{ margin: "auto" }}
-                  className={` ${styles.bg} ${
-                    v.isChecked ? `${styles.completed}` : `${styles.notCompleted}`
+                  className={`bg-task mx-auto ${
+                    v.isChecked ? "completed" : "notCompleted"
                   }`}
                 >
                   <p
-                    style={{
-                      fontSize: "0.8rem",
-                      color: "black",
-                      textDecorationLine: v.isChecked ? "line-through" : "",
-                    }}
-                    className={`${styles.taskContent}`}
+                    className={`task-content text-black text-sm ${
+                      v.isChecked ? "line-through" : ""
+                    } `}
                   >
                     {v.content}
                   </p>
