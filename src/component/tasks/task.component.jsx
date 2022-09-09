@@ -1,7 +1,7 @@
 import "./task.css";
 
 export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
-  const handleSubmit = (e, i) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
   };
 
@@ -62,7 +62,7 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
             <div key={i} className="mx-auto">
               <form
                 className="list flex items-center gap-5 pb-5"
-                onSubmit={(e) => handleSubmit(e, i)}
+                onSubmit={handleSubmit}
               >
                 <li
                   className={`bg-task mx-auto ${
