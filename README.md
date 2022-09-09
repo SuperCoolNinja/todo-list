@@ -28,6 +28,6 @@ So to end this project i need to make it responsive, and of course add the edit 
 
 # Try it now :
 
-https://mini-todolist.netlify.app/
+https://supercoolninja.github.io/todo-list/
 
 https://user-images.githubusercontent.com/28671231/189210787-14a73156-5c18-459b-aa92-ddbbe98ab1df.mp4
