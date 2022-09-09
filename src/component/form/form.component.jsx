@@ -27,7 +27,7 @@ export const Form = ({ handleAddTask }) => {
         <input
           className="inputStyle"
           type="text"
-          placeholder="Task to be done ..."
+          placeholder="Task to be done ✍"
           value={taskContent.content}
           onChange={handleChange}
         />
