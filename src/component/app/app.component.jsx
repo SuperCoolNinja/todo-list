@@ -50,9 +50,14 @@ export const App = () => {
 
   return (
     <div>
-      <h1 className="text-center font-semibold text-5xl py-28">Todo📝</h1>
+      <h1 className="title">Todo📝</h1>
 
-      <Form handleAddTask={handleAddTask} handleTaskCompleted = {handleTaskCompleted} handleRemoveTask={handleRemoveTask} data={data} />
+      <Form
+        handleAddTask={handleAddTask}
+        handleTaskCompleted={handleTaskCompleted}
+        handleRemoveTask={handleRemoveTask}
+        data={data}
+      />
 
       {notifications.map(({ id, color, content }) => (
         <Notifications key={id} autoClose={true} color={color}>

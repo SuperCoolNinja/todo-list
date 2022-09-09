@@ -59,20 +59,30 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
       <ul className="container-task">
         {listTask.map((v, i) => {
           return (
-            <div key={i} className="mx-auto">
+            <div key={i} style={{ margin: "auto" }}>
               <form
-                className="list flex items-center gap-5 pb-5"
+                className="list"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  paddingBottom: 5,
+                  gap: "2em",
+                }}
                 onSubmit={handleSubmit}
               >
                 <li
-                  className={`bg-task mx-auto ${
+                  style={{ margin: "auto" }}
+                  className={`bg-task ${
                     v.isChecked ? "completed" : "notCompleted"
                   }`}
                 >
                   <p
-                    className={`task-content text-black text-sm ${
-                      v.isChecked ? "line-through" : ""
-                    } `}
+                    style={{
+                      fontSize: "0.8rem",
+                      color: "black",
+                      textDecorationLine: v.isChecked ? "line-through" : "",
+                    }}
+                    className="task-content"
                   >
                     {v.content}
                   </p>

@@ -35,7 +35,7 @@ export const Form = ({ handleAddTask, handleTaskCompleted, handleRemoveTask, dat
         <button
           type="submit"
           name="add"
-          className="bg-btn add font-semibold"
+          className="bg-btn add"
           onClick={handleAdd}
         >
           ADD
