@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Form } from "../form/form.component";
-import { Task } from "../tasks/task.component";
 import {
   Color,
   Notifications,
@@ -52,14 +51,8 @@ export const App = () => {
   return (
     <div>
       <h1 className="text-center font-semibold text-5xl py-28">Todo📝</h1>
-      <div className="container">
-        <Form handleAddTask={handleAddTask} />
-        <Task
-          handleTaskCompleted={handleTaskCompleted}
-          listTask={data}
-          handleRemoveTask={handleRemoveTask}
-        />
-      </div>
+
+      <Form handleAddTask={handleAddTask} handleTaskCompleted = {handleTaskCompleted} handleRemoveTask={handleRemoveTask} data={data} />
 
       {notifications.map(({ id, color, content }) => (
         <Notifications key={id} autoClose={true} color={color}>

@@ -1,7 +1,8 @@
 import "./form.css";
 import { useState } from "react";
+import { Task } from "../tasks/task.component";
 
-export const Form = ({ handleAddTask }) => {
+export const Form = ({ handleAddTask, handleTaskCompleted, handleRemoveTask, data }) => {
   const [taskContent, setTaskContent] = useState({
     content: "",
     isChecked: false,
@@ -22,22 +23,30 @@ export const Form = ({ handleAddTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="wrapper-form">
-      <input
-        className="inputStyle"
-        type="text"
-        placeholder="Task to be done ✍"
-        value={taskContent.content}
-        onChange={handleChange}
+    <div className="container">
+      <form onSubmit={handleSubmit}>
+        <input
+          className="inputStyle"
+          type="text"
+          placeholder="Task to be done ✍"
+          value={taskContent.content}
+          onChange={handleChange}
+        />
+        <button
+          type="submit"
+          name="add"
+          className="bg-btn add font-semibold"
+          onClick={handleAdd}
+        >
+          ADD
+        </button>
+      </form>
+
+      <Task
+        handleTaskCompleted={handleTaskCompleted}
+        listTask={data}
+        handleRemoveTask={handleRemoveTask}
       />
-      <button
-        type="submit"
-        name="add"
-        className="bg-btn add font-semibold"
-        onClick={handleAdd}
-      >
-        ADD
-      </button>
-    </form>
+    </div>
   );
 };
