@@ -34,11 +34,11 @@
 .bg-btn {
   width: auto;
   height: auto;
-  background-color: #377fd177;
+  background-color: #0077ff;
   padding: 1rem 1.7rem;
   border-radius: 0.5rem;
 }
 .bg-btn:hover {
   transition: 0.3s ease-in-out;
-  background-color: #377fd1;
+  background-color: #33b9f3;
 }

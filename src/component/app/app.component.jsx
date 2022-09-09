@@ -48,7 +48,7 @@ export const App = () => {
 
   return (
     <div>
-      <h1 className="text-center font-semibold text-5xl py-28">Todo List</h1>
+      <h1 className="text-center font-semibold text-5xl py-28">Mini App - Todo List</h1>
       <div className="container">
         <Form handleAddTask={handleAddTask} />
         <Task

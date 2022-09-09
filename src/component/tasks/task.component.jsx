@@ -56,7 +56,6 @@ export const Task = ({ handleTaskCompleted, listTask, handleRemoveTask }) => {
 
   return (
     <>
-      <h1>Task list :</h1>
       <ul className="container-task">
         {listTask.map((v, i) => {
           return (

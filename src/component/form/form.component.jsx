@@ -29,7 +29,7 @@ export const Form = ({ handleAddTask }) => {
           onChange={handleChange}
         />
         <div className="bg-btn">
-          <button type="submit" name="add" className="add font-semibold">
+          <button type="submit" name="add" className="add font-semibold" onClick={handleSubmit}>
             ADD
           </button>
         </div>
