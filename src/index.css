@@ -24,7 +24,7 @@
 body {
   position: relative;
   font-family: "Poppins", sans-serif;
+  background: #066acd;
   font-size: 62.5%;
   color: white;
-  z-index: -1;
 }
