@@ -53,13 +53,13 @@
   background-color: #33b9f3;
 }
 
-@media (max-width: 640px) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
   .container {
-    width: 80%;
+    width: 90%;
   }
 
   .inputStyle {
-    margin: 1rem 1.2rem;
+    margin: 1rem 1rem;
     width: 13rem;
   }
 
@@ -68,13 +68,13 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 640px) {
   .container {
-    width: 90%;
+    width: 80%;
   }
 
   .inputStyle {
-    margin: 1rem 1rem;
+    margin: 1rem 1.2rem;
     width: 13rem;
   }
 
