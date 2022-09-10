@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   margin: auto;
+  margin-bottom: 5rem;
   width: 45%;
   height: auto;
   background: white;
@@ -53,6 +54,72 @@
   background-color: #33b9f3;
 }
 
+
+/*Nest Hub Max*/
+@media (max-width: 1280px) {
+  .container {
+    width: 70%;
+  }
+
+  .inputStyle {
+    margin: 1rem 2rem;
+    width: 13rem;
+  }
+
+  .bg-btn {
+    padding: 0.7rem 0.8rem;
+  }
+}
+
+
+/*Nest Hub*/
+@media (max-width: 1024px) {
+  .container {
+    width: 70%;
+  }
+
+  .inputStyle {
+    margin: 1rem 2rem;
+    width: 13rem;
+  }
+
+  .bg-btn {
+    padding: 0.7rem 0.8rem;
+  }
+}
+
+/*Surface Pro*/
+@media (max-width: 912px) {
+  .container {
+    width: 80%;
+  }
+
+  .inputStyle {
+    margin: 1rem 2rem;
+    width: 13rem;
+  }
+
+  .bg-btn {
+    padding: 0.7rem 0.8rem;
+  }
+}
+
+/*Ipad Air*/
+@media (max-width: 820px) {
+  .container {
+    width: 80%;
+  }
+
+  .inputStyle {
+    margin: 1rem 2rem;
+    width: 13rem;
+  }
+
+  .bg-btn {
+    padding: 0.7rem 0.8rem;
+  }
+}
+
 @media (max-width: 640px) {
   .container {
     width: 80%;
@@ -68,6 +135,17 @@
   }
 }
 
+@media (max-width: 414px) {
+  .container {
+    width: 90%;
+  }
+
+  .inputStyle {
+    margin: 1rem 1rem;
+    width: 13rem;
+  }
+}
+
 @media (max-width: 375px) {
   .container {
     width: 90%;
@@ -80,5 +158,17 @@
 
   .bg-btn {
     padding: 0.7rem 0.8rem;
+  }
+}
+
+/*Samsung S8+*/
+@media (max-width: 360px) {
+  .container {
+    width: 95%;
+  }
+
+  .inputStyle {
+    margin: 1rem 1rem;
+    width: 13rem;
   }
 }

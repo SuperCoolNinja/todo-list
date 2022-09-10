@@ -28,3 +28,25 @@ body {
   font-size: 62.5%;
   color: white;
 }
+
+@media (max-width: 912px) {
+  #notifyContainer {
+    top: 11rem;
+    right: 22rem;
+    height: 15rem;
+  }
+}
+@media (max-width: 820px) {
+  #notifyContainer {
+    top: 11rem;
+    right: 18rem;
+    height: 15rem;
+  }
+}
+@media (max-width: 576px) {
+  #notifyContainer {
+    top: 11rem;
+    right: 5rem;
+    height: 15rem;
+  }
+}

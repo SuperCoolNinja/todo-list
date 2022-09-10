@@ -3,9 +3,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  max-height: 30rem;
+  max-height: 50rem;
   overflow: auto;
-  width: 100%;
+  width: 45rem;
 }
 
 /*Custom with bar color and looks :*/
@@ -121,5 +121,48 @@
   100% {
     opacity: 0.5;
     width: 25rem;
+  }
+}
+
+
+
+@media (max-width: 576px) {
+  @keyframes pop-in {
+    0% {
+      width: 10rem;
+    }
+
+    100% {
+      width: 10rem;
+    }
+  }
+
+  @keyframes pop-out {
+    0% {
+      width: 10rem;
+    }
+
+    100% {
+      width: 10rem;
+    }
+  }
+
+  .notCompleted {
+    margin-left: 2.5rem;
+  }
+
+  .completed-task {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .drop-task {
+    font-size: 1rem;
+    font-weight: bolder;
+    padding: 0.6rem 1rem;
+  }
+
+  .container-task {
+    max-height:none;
   }
 }
