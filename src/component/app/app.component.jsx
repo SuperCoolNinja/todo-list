@@ -49,9 +49,7 @@ export const App = () => {
 
   return (
     <div>
-
-      <h1 style={{fontSize : '5rem', textAlign : 'center', paddingTop : '15rem'}}>Hello World !</h1>
-      {/* <h1 className="text-center font-semibold text-5xl py-28">Todo📝</h1>
+      <h1 className="text-center font-semibold text-5xl py-28">Todo📝</h1>
 
       <Formulaire handleAddTask={handleAddTask} handleTaskCompleted = {handleTaskCompleted} handleRemoveTask={handleRemoveTask} data={data} />
 
@@ -59,7 +57,7 @@ export const App = () => {
         <Notifications key={id} autoClose={true} color={color}>
           {content}
         </Notifications>
-      ))} */}
+      ))}
     </div>
   );
 };

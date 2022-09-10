@@ -47,7 +47,7 @@ export const Notifications = ({
   );
 };
 
-Notification.propTypes = {
+Notifications.propTypes = {
   notificationType: PropTypes.oneOf(Object.keys(Color)),
   children: PropTypes.element,
 };
