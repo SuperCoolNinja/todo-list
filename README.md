@@ -10,7 +10,7 @@ A simple Mini-Todo-List which i made from scratch while learning React Js logic.
 
 So this project use React JS you will need to have node js to be able to install the module.
 
-commande : npm i / npm start
+commande : npm i / npm start or yarn install / yarn start
 
 ## Features
 
@@ -19,15 +19,10 @@ commande : npm i / npm start
   <li>Remove your task.</li>
   <li>Complete your task.</li>
   <li>Now the task are saved into the storage cache.</li>
-  <li> <strong>[SOON]</strong> Edit your task.</li>
 </ul>
-
-## What Todo next ?
-
-So to end this project i need to make it responsive, and of course add the edit feature.
 
 # Try it now :
 
 https://supercoolninja.github.io/todo-list/
 
-https://user-images.githubusercontent.com/28671231/189210787-14a73156-5c18-459b-aa92-ddbbe98ab1df.mp4
+https://user-images.githubusercontent.com/28671231/189484170-7d1891e9-0e9c-4923-9884-cd46fce3ff1a.mp4
